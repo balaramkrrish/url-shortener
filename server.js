@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 const port = process.env.PORT || 3000;
 
-connectDB("mongodb+srv://balls:balls@cluster0.p0138vq.mongodb.net/?retryWrites=true&w=majority");
+connectDB(process.env.MONGO_URI);
 app.listen(port, console.log(`server is listening on port ${port}...`));
 
 app.get("/", async (req, res) => {
